@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    {% if message %}
+    <p>{{message|safe}}</p>
+        
+    {% endif %}
+    <div class="form-container">
+        <form action="/submit" method="post">
+            <label for="text-input">Customer Name</label>
+            <input type="text" id="text-input" name="customer" required>
+
+            <label for="dropdown-input">Dealer</label>
+            <select id="dropdown-input" name="dealer" required>
+                <option value="None" disabled selected>Choose brand</option>
+                <option value="honda">honda</option>
+                <option value="yamaha">yamaha</option>
+                <option value="hero">hero</option>
+                <option value="bajaj">bajaj</option>
+            </select>
+
+            <label for="rating">Rate Us (0-10):</label>
+            <div id="rating" class="radio-buttons">
+                <label><input type="radio" name="rating" value="0" required> 0</label>
+                <label><input type="radio" name="rating" value="1"> 1</label>
+                <label><input type="radio" name="rating" value="2"> 2</label>
+                <label><input type="radio" name="rating" value="3"> 3</label>
+                <label><input type="radio" name="rating" value="4"> 4</label>
+                <label><input type="radio" name="rating" value="5"> 5</label>
+                <label><input type="radio" name="rating" value="6"> 6</label>
+                <label><input type="radio" name="rating" value="7"> 7</label>
+                <label><input type="radio" name="rating" value="8"> 8</label>
+                <label><input type="radio" name="rating" value="9"> 9</label>
+                <label><input type="radio" name="rating" value="10"> 10</label>
+            </div>
+
+            <label for="comment-box">Comments:</label>
+            <textarea id="comment-box" name="comment-box" rows="4" cols="50" placeholder="Enter your comments here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
